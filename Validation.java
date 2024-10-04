@@ -80,7 +80,8 @@ public class Validation {
     }
 
     public static boolean isValidPassword(String password) {
-        return password.length() >= 8;
+        String regex = "^(?=.*[A-Z]).{8,}$";
+        return password.matches(regex);
     }
 
 }
