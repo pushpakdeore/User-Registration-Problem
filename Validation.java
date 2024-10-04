@@ -36,6 +36,17 @@ public class Validation {
             System.out.println("Invalid email. It must follow the format abc.xyz@bl.co.in.");
         }
 
+        System.out.print("Enter your mobile number (e.g., 91 9919819801): ");
+        String mobileNumber = scanner.nextLine();
+
+
+        if (isValidMobileNumber(mobileNumber)) {
+            System.out.println("Valid mobile number.");
+        } else {
+            System.out.println("Invalid mobile number. It must follow the format 91 9919819801.");
+        }
+
+
         scanner.close();
     }
 
@@ -53,6 +64,10 @@ public class Validation {
     public static boolean isValidEmail(String email) {
         String regex = "^[a-zA-Z0-9]+(?:\\.[a-zA-Z0-9]+)*@[a-zA-Z0-9]+\\.[a-zA-Z]{2,}(\\.[a-zA-Z]{2,})?$";
         return email.matches(regex);
+    }
+    public static boolean isValidMobileNumber(String mobileNumber) {
+        String regex = "^91\\s[0-9]{10}$";
+        return mobileNumber.matches(regex);
     }
 
 }
